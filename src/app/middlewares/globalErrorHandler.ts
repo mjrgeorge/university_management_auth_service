@@ -8,7 +8,7 @@ import handleValidationError from '../../errors/handleValidationError';
 
 import { ZodError } from 'zod';
 import handleZodError from '../../errors/handleZodError';
-import { IGenericErrorMessage } from '../../interfaces/IGenericErrorMessage';
+import { IGenericErrorMessage } from '../../interfaces/error';
 import { errorlogger } from '../../shared/logger';
 
 const globalErrorHandler: ErrorRequestHandler = (
@@ -69,3 +69,10 @@ const globalErrorHandler: ErrorRequestHandler = (
 };
 
 export default globalErrorHandler;
+
+//path:
+//message:
+
+// 2025 Fall
+
+// 2025 and

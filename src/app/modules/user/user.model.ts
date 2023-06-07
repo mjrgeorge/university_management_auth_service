@@ -8,11 +8,11 @@ const userSchema = new Schema<IUser>(
       required: true,
       unique: true,
     },
-    password: {
+    role: {
       type: String,
       required: true,
     },
-    role: {
+    password: {
       type: String,
       required: true,
     },
@@ -21,5 +21,4 @@ const userSchema = new Schema<IUser>(
     timestamps: true,
   }
 );
-
 export const User = model<IUser, UserModel>('User', userSchema);

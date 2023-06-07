@@ -12,11 +12,11 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use('/api/v1/users/', UserRoutes);
 
-// // Testing
+// //Testing
 // app.get('/', async (req: Request, res: Response, next: NextFunction) => {
-//   throw new Error('Testing Error logger')
-//   // res.send('wellcome')
-// })
+//     throw new Error('Testing Error logger')
+// //   res.send('Hello World');
+// });
 
 //global error handler
 app.use(globalErrorHandler);
