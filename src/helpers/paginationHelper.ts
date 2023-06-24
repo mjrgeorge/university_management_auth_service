@@ -6,6 +6,7 @@ type IOptions = {
   sortBy?: string;
   sortOrder?: SortOrder;
 };
+
 type IOptionsResult = {
   page: number;
   limit: number;

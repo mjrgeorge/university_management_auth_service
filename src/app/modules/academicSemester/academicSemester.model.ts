@@ -3,13 +3,10 @@ import { Schema, model } from 'mongoose';
 import ApiError from '../../../errors/ApiError';
 import {
   academicSemesterCodes,
-  academicSemesterMonths,
   academicSemesterTitles,
+  acdemicSemesterMonths,
 } from './academicSemester.constant';
-import {
-  AcademicSemesterModel,
-  IAcademicSemester,
-} from './academicSemester.interface';
+import { IAcademicSemester } from './academicSemester.interface';
 
 const academicSemesterSchema = new Schema<IAcademicSemester>(
   {
@@ -30,12 +27,12 @@ const academicSemesterSchema = new Schema<IAcademicSemester>(
     startMonth: {
       type: String,
       required: true,
-      enum: academicSemesterMonths,
+      enum: acdemicSemesterMonths,
     },
     endMonth: {
       type: String,
       required: true,
-      enum: academicSemesterMonths,
+      enum: acdemicSemesterMonths,
     },
   },
   {
@@ -54,13 +51,13 @@ academicSemesterSchema.pre('save', async function (next) {
   if (isExist) {
     throw new ApiError(
       httpStatus.CONFLICT,
-      'Academic semester is already exists !'
+      'Academic semester is already exist !'
     );
   }
   next();
 });
 
-export const AcademicSemester = model<IAcademicSemester, AcademicSemesterModel>(
+export const AcademicSemester = model<IAcademicSemester>(
   'AcademicSemester',
   academicSemesterSchema
 );
